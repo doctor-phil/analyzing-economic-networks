@@ -29,8 +29,6 @@ kernelspec:
 - Explore the relationship between networks and linear algebra, especially the role of eigenvalues in centrality, connectivity, and clustering
 - Apply these tools to real economic data
 
-+++ {"tags": []}
-
 ## What is a network?
 
 Simply put, a network is a map that shows us how different objects are related to each other.
@@ -72,15 +70,11 @@ In economics, networks or graphs are often used to represent:
 
 Networks are also useful in machine learning, where they are used to describe the connections between neurons in neural architectures, and correlations between random variables in graphical models.
 
-+++
-
 ## Graph basics in NetworkX
 
 Since networks arise so naturally in so many problems, mathematicians, computer scientists, physicists, biologists, engineers, and social scientists have developed a lot of different tools that we can use to understand their structure. The mathematical study of networks and their structure is called **graph theory**. 
 
 The `networkx` library (`nx` for short) gives data scientists a convenient toolbox to these networks in Python. Here are some of the basic tools and terms in graph theory, and their Python implementation:
-
-+++
 
 ### Creating a new graph
 
@@ -183,8 +177,6 @@ If the new nodes have **preferential attachment**, that is, they put higher prob
 
 In summary, the desire of new nodes to attach themselves with "popular" nodes can lead to the emergence of a relatively small set of "influencers", who have a much higher degree than everyone else.
 
-+++
-
 ### Connectivity and routing
 
 Another question we might ask when observing networks is how well-connected they are. An undirected graph is called **connected** if, for every pair $(i,j)$, there exists a **path** between these two nodes.
@@ -264,7 +256,6 @@ print("There are", n_paths, "paths of length 7 from node 1 to node 12")
 
 So there are no paths of length 6 that connect node 1 to node 12, but there are exactly 4 paths of length 7. We drew one of these paths out earlier. Can you find the other 3?
 
-+++
 
 The adjacency matrix is not the only convenient representation of a graph in matrix form. Another one, called the **laplacian**, has a lot of equally interesting properties.
 
@@ -451,7 +442,6 @@ What this eigenvalue does exactly, is provide an approximation of the difficulty
 
 For example, in our case we saw that it was relatively easy to split this network into four components, but we can see that there is a big jump from the fourth to the fifth eigenvalue. This tells us that there is *not* a natural segmentation of the graph into 5 components. (This logic actually generalizes quite well to discovering larger numbers of clusters; all you would need to do is take the first four eigenvalues of the laplacian, and run a clustering algorithm (like K-Means) on the eigenvectors, with K equal to the number of clusters you wish to discover. This class of methods is known as **spectral clustering**.)
 
-+++
 
 ## Applications
 
